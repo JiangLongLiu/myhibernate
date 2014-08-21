@@ -2,6 +2,8 @@ package com.liujl.hibernate;
 
 import java.util.Date;
 
+import net.sf.ehcache.hibernate.HibernateUtil;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.core.Logger;
 import org.hibernate.Session;
@@ -62,8 +64,8 @@ public class Client {
 		}finally{
 			//关闭连接
 			if(session!=null){
-				session.close();
-				logger.info("session连接关闭");
+//				session.close();
+//				logger.info("session连接关闭");
 			}
 		}
 	}

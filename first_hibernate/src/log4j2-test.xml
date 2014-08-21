@@ -18,8 +18,8 @@
   
   <loggers>  
   <!--additivity选项，如果设置为true（默认值）则HelloLog4j的log会被打印两次，第二次打印是由于HelloLog4j同时也满足 root里面定义的trace -->
-	  <logger name="com.liujl.hibernate.Client" level="info" additivity="true">
-	  	<appender-ref ref="RollingFile"/>
+	  <logger name="com.liujl.hibernate.Client" level="all" additivity="false">
+	  	<appender-ref ref="Console"/>
 	  </logger>
   <!-- 默认输出 -->
 	  <root level="trace">  

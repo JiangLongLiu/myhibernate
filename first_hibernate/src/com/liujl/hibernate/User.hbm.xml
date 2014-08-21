@@ -12,6 +12,7 @@
 		</id>
 		<!-- property 映射普通属性 映射到数据表中的字段名默认为类属性名，但可以利用column重新指 定 -->
 		<property name="name" column="name" />
+		<property name="age" column="age" />
 		<property name="password" />
 		<property name="createTime" /><!-- Hibernate会自动根据实体类属性类型生成数据库表中字段 
 			类型 -->
