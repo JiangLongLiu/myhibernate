@@ -106,14 +106,14 @@ private static final Logger logger=(Logger) LogManager.getLogger(org.hibernate.S
 			* Object org.hibernate.Session.get(Class arg0, Serializable arg1) throws
 			HibernateException
 			* arg0:需要加载对象的类，例如：User.class
-			* arg1:查询条件(实现了序列化接口的对象)：例"4028818a245fdd0301245fdd06380001"字
+			* arg1:查询条件(实现了序列化接口的对象)：例"4028940447f7bf260147f7bf27aa0000"字
 			符串已经实现了序列化接口。
 			* 此方法返回类型为Object，也就是对象，然后我们再强行转换为需要加载的对象就可以了。
 			如果数据不存在，则返回null
 			* 执行此方法时立即发出查询SQL语句。加载User对象。
 			*/
 			
-			user =(User)session.get(User.class, "4028940447f7646b0147f7646cdb0000");
+			user =(User)session.get(User.class, "4028940447f7bf260147f7bf27aa0000");
 			//数据加载完后的状态为persistent状态。数据将与数据库同步。
 			logger.debug("user.name= "+user.getName());
 			user.setName("龙哥");
@@ -140,7 +140,7 @@ private static final Logger logger=(Logger) LogManager.getLogger(org.hibernate.S
 			session=sessionFactory.openSession();
 			tx=session.beginTransaction();
 			/** arg0:需要加载对象的类，例如：User.class
-			* arg1:查询条件(实现了序列化接口的对象)：例"4028818a245fdd0301245fdd06380001"字符串已经实现
+			* arg1:查询条件(实现了序列化接口的对象)：例"4028940447f7bf260147f7bf27aa0000"字符串已经实现
 			了序列化接口。
 			* 此方法返回类型为Object，但返回的是代理对象。
 			* 执行此方法时不会立即发出查询SQL语句。只有在使用对象时，它才发出查询SQL语句，加载对象。
@@ -150,7 +150,7 @@ private static final Logger logger=(Logger) LogManager.getLogger(org.hibernate.S
 			* 采用load() 方法加载数据， 如果数据库中没有相应的记录， 则会抛出异常对象不找到
 			(org.hibernate.ObjectNotFoundException)
 			*/
-			user =(User)session.load(User.class, "4028940447f7646b0147f7646cdb0000");
+			user =(User)session.load(User.class, "4028940447f7bf260147f7bf27aa0000");
 			//数据加载完后的状态为persistent状态。数据将与数据库同步。
 //			logger.debug("user.name= "+user.getName());
 			user.setName("发哥");
@@ -178,11 +178,10 @@ private static final Logger logger=(Logger) LogManager.getLogger(org.hibernate.S
 		try{
 			session=sessionFactory.openSession();
 			tx=session.beginTransaction();
-			user=(User)session.load(User.class, "4028940447f7646b0147f7646cdb0000");//根据主键加载对象
+			user=(User)session.load(User.class, "4028940447f7bf260147f7bf27aa0000");//根据主键加载对象
 			logger.debug("load延迟加载user对象，由于暂时没有用到user对象的方法，所以不会发送select语句");
 			session.delete(user);
-			//user对象删除后，回复到transient 临时状态
-			
+			//user对象删除后，回复到transient 临时状态,随时可以被jvm回收
 			logger.debug("session未提交事务，由于使用了user对象，load延迟加载的代理对象发送了了select语句？");
 			tx.commit();
 		}catch (HibernateException e) {
