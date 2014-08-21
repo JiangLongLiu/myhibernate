@@ -6,7 +6,7 @@
 	<session-factory>
 		<!-- 具体的配置信息可参见hibernate_home/etc/hibernate.properties相关配置项 如何要移植数据时，只要将下面数据库信息修改就可以了。 -->
 		<!-- 配置mysql数据库连接串 -->
-		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/hibernate_first</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/hibernate_first?useUnicode=true&amp;characterEncoding=utf-8</property>
 		<!-- 配置mysql数据库jdbc驱动 -->
 		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
 		<!-- 配置mysql数据库连接用户名 -->
