@@ -3,7 +3,7 @@
 "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
-<session-factory>
+	<session-factory>
 		<!-- 具体的配置信息可参见hibernate_home/etc/hibernate.properties相关配置项 如何要移植数据时，只要将下面数据库信息修改就可以了。 -->
 		<!-- 配置mysql数据库连接串 -->
 		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/hibernate_first</property>
@@ -19,6 +19,7 @@
 		<property name="hibernate.show_sql">true</property>
 		<!-- 实体类导出至数据库时，如果存在的表处理方式： hibernate.hbm2ddl.auto :(create-drop、create、update、validate) -->
 		<property name="hibernate.hbm2ddl.auto">update</property>
-		<mapping resource="com/liujl/hibernate/User.hbm.xml"/>
-</session-factory>
+		<!-- 配置实体类映射文件 位于property之后 映射文件要求为完整路径，目录之前使用/隔开 -->
+		<mapping resource="com/liujl/hibernate/User.hbm.xml" />
+	</session-factory>
 </hibernate-configuration>
