@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.liujl.hibernate">
+	<!-- class标签 实体类映射到数据表 * name属性：实体类的完整路径 * table属性：实体类映射到数据库中的表名，如果省略，则为实体类的类名称 -->
+	<class name="com.liujl.hibernate.User" table="t_user">
+		<!-- 映射数据库主键 映射到数据表中的字段名默认为类属性名，但可以利用column重新指定 -->
+		<id name="id" column="id">
+			<!-- generator设置主键生成策略 uuid:一万年内生成唯一的字符串 -->
+			<generator class="uuid" />
+		</id>
+		<!-- property 映射普通属性 映射到数据表中的字段名默认为类属性名，但可以利用column重新指 定 -->
+		<property name="name" column="name" />
+		<property name="password" />
+		<property name="createTime" /><!-- Hibernate会自动根据实体类属性类型生成数据库表中字段 
+			类型 -->
+		<property name="expireTime" />
+	</class>
+</hibernate-mapping>
