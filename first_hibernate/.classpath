@@ -38,7 +38,8 @@
 	<classpathentry exported="true" kind="lib" path="D:/frames/apache/dist/common/logging/commons-logging-1.1.3/commons-logging-1.1.3.jar"/>
 	<classpathentry exported="true" kind="lib" path="D:/frames/apache/dist/common/lang/commons-lang-2.6/commons-lang-2.6.jar"/>
 	<classpathentry exported="true" kind="lib" path="D:/frames/others/mysql-connector-java-5.1.30.jar"/>
-	<classpathentry exported="true" kind="lib" path="D:/frames/others/log4j-1.1.3.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="D:/frames/apache/logging/apache-log4j-2.0.1-bin/log4j-core-2.0.1.jar"/>
+	<classpathentry kind="lib" path="D:/frames/apache/logging/apache-log4j-2.0.1-bin/log4j-api-2.0.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
